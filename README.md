@@ -1,3 +1,5 @@
+![CI](https://github.com/Amandeep-tech/modify-str/actions/workflows/ci.yml/badge.svg)
+
 # modify-str
 
 A small, lightweight utility to **modify strings using a single, configurable API**.  
