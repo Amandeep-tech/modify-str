@@ -8,7 +8,7 @@
   "files": ["dist"],
   "scripts": {
     "build": "tsup",
-    "test": "vitest run",
+    "test": "npx vitest run",
     "prepublishOnly": "npm run build"
   },
   "keywords": [
