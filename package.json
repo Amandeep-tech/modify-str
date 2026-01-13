@@ -1,20 +1,23 @@
 {
-  "name": "modify-str",
+  "name": "@amandeepsingh13/modify-str",
   "version": "1.0.0",
-  "main": "index.js",
+  "description": "A configurable, immutable string modification utility written in TypeScript",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "files": ["dist"],
   "scripts": {
     "build": "tsup",
     "test": "vitest run",
-    "dev": "vitest"
+    "prepublishOnly": "npm run build"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
-  "devDependencies": {
-    "@types/node": "^25.0.7",
-    "tsup": "^8.5.1",
-    "typescript": "^5.9.3",
-    "vitest": "^4.0.17"
-  }
+  "keywords": [
+    "string",
+    "utility",
+    "typescript",
+    "npm",
+    "formatter"
+  ],
+  "author": "Amandeep Singh",
+  "license": "MIT"
 }
