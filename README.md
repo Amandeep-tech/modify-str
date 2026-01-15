@@ -19,7 +19,7 @@ Instead of manually chaining multiple string operations:
 str.trim().toUpperCase().replace(/\s+/g, "_");
 ```
 
-// You can declaratively describe what you want:
+You can declaratively describe what you want:
 
 ```js
 modifyStr("Hello World", {
@@ -31,11 +31,11 @@ modifyStr("Hello World", {
 
 This makes string transformations:
 
-// 1. Easier to read
+1. Easier to read
 
-// 2. Easier to maintain
+2. Easier to maintain
 
-// 3. Easier to extend
+3. Easier to extend
 
 ## Installation
 `npm install @amandeepsingh13/modify-str`
@@ -117,7 +117,7 @@ console.log(
 
 
 
-Applying Multiple Transformations
+## Applying Multiple Transformations
 
 ```js
 modifyStr("  Hello World  ", {
@@ -130,7 +130,7 @@ modifyStr("  Hello World  ", {
 
 
 
-Conflict Resolution (Important)
+## Conflict Resolution (Important)
 
 If conflicting options are provided,
 the last option wins.
