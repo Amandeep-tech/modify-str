@@ -1,6 +1,6 @@
 {
   "name": "@amandeepsingh13/modify-str",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A configurable, immutable string modification utility written in TypeScript",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
