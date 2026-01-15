@@ -17,29 +17,33 @@ Instead of manually chaining multiple string operations:
 
 ```js
 str.trim().toUpperCase().replace(/\s+/g, "_");
+```
 
-You can declaratively describe what you want:
+// You can declaratively describe what you want:
 
+```js
 modifyStr("Hello World", {
   trim: true,
   snakeCase: true,
   toUpperCase: true,
 });
+```
 
 This makes string transformations:
 
-- **Easier to read**
+// 1. Easier to read
 
-- **Easier to maintain**
+// 2. Easier to maintain
 
-- **Easier to extend**
+// 3. Easier to extend
 
-📦 Installation
-npm install @amandeepsingh13/modify-str
+## Installation
+`npm install @amandeepsingh13/modify-str`
 
-Basic Usage
+## Basic Usage
 
-ESM
+```js
+// ESM
 import { modifyStr } from "@amandeepsingh13/modify-str";
 
 const result = modifyStr("Hello World", {
@@ -48,63 +52,97 @@ const result = modifyStr("Hello World", {
 
 console.log(result);
 // hello_world
+```
 
-
-CommonJS
+```js
+// CommonJS
 const { modifyStr } = require("@amandeepsingh13/modify-str");
 
 console.log(
   modifyStr("Hello World", { toUpperCase: true })
 );
 // HELLO WORLD
+```
 
 
-Core API
-modifyStr(input, options)
-modifyStr(input: string, options?: ModifyOptions): string
+## ⚙️ Available Options
 
-input → the string you want to modify
+### `trim`
 
-options → configuration describing which transformations to apply
+| Property | Value |
+|--------|------|
+| **Type** | `boolean` |
+| **Description** | Removes leading and trailing spaces |
+| **Example** | `"  hi  "` → `"hi"` |
 
-The function always returns a new string and never mutates the input.
+---
 
-⚙️ Available Options
+### `removeExtraSpaces`
 
-trim	Removes leading & trailing spaces	" hi " → "hi"
-removeExtraSpaces	Collapses multiple spaces into one	"hi there" → "hi there"
-capitaliseFirstChar	Capitalizes the first character	"hello" → "Hello"
-toUpperCase	Converts string to upper case	"hi" → "HI"
-toLowerCase	Converts string to lower case	"HI" → "hi"
-snakeCase	Converts to snake_case	"Hello World" → "hello_world"
-camelCase	Converts to camelCase	"hello world" → "helloWorld"
+| Property | Value |
+|--------|------|
+| **Type** | `boolean` |
+| **Description** | Collapses multiple spaces into a single space |
+| **Example** | `"hi   there"` → `"hi there"` |
+
+---
+
+### `capitaliseFirstChar`
+
+| Property | Value |
+|--------|------|
+| **Type** | `boolean` |
+| **Description** | Capitalizes the first character of the string |
+| **Example** | `"hello"` → `"Hello"` |
+
+---
+
+### `snakeCase`
+
+| Property | Value |
+|--------|------|
+| **Type** | `boolean` |
+| **Description** | Converts a string to `snake_case` |
+| **Example** | `"Hello World"` → `"hello_world"` |
+
+---
+
+### `camelCase`
+
+| Property | Value |
+|--------|------|
+| **Type** | `boolean` |
+| **Description** | Converts a string to `camelCase` |
+| **Example** | `"hello world"` → `"helloWorld"` |
+
 
 
 Applying Multiple Transformations
 
+```js
 modifyStr("  Hello World  ", {
   trim: true,
   snakeCase: true,
   toUpperCase: true,
 });
-
-OUTPUT
--------
-HELLO_WORLD
+// HELLO_WORLD
+```
 
 
 
 Conflict Resolution (Important)
 
 If conflicting options are provided,
-👉 the last option wins.
+the last option wins.
+
+```js
 modifyStr("Hello World", {
   toUpperCase: true,
   toLowerCase: true,
 });
 
-OUTPUT
-------
-hello world
+// hello world
+
+```
 
 
